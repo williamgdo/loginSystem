@@ -12,12 +12,13 @@ export default class UserDash extends Component {
                     <tr>
                         <th>Nome Completo</th>
                         <th>CPF</th>
-                        <th>Email</th>
+                        <th>Email</th> 
                     </tr>
                     <tr>
                         <td>Alfreds Futterkiste</td>
                         <td>123456789-09</td>
-                        <td>william@gmail.com</td>
+                        <td>william@gmail.com<button>Detalhes</button><button>Desativar</button></td>
+                        
                     </tr>
                     <tr>
                         <td>Centro comercial Moctezuma</td>
