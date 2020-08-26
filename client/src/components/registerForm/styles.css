@@ -1,0 +1,46 @@
+.registerForm {
+    background-color: #edf0f4;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    font-size: 28px;
+} 
+
+.data {
+    color: #1B2D2A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+input {
+    padding-top: 16px;
+    box-sizing: border-box;
+    outline: none;
+    border: solid 2px #c9d3dd;
+    border-radius: 4px;
+    color: #292929;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    background: #FFF;
+    /* background: #FFC482; */
+    margin-top: 20px;
+}
+
+button {
+    padding-top: 16px;
+    width: 100%;
+    min-width: 280px;
+    color: #FFF;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold; 
+    border: solid 2px #29323d;
+    border-radius: 4px;
+    background: #29323d;
+    cursor: pointer;
+    margin-top: 20px;
+}

@@ -1,0 +1,33 @@
+h1 {
+    margin: 30px 0px 5px 70px;    
+}
+
+table {
+    margin: 20px 140px 20px 70px;
+    border-collapse: collapse;
+    width: 90%;
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+button {
+    margin: 20px;
+    padding-top: 16px;
+    width: 280px;
+    color: #FFF;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold; 
+    border: solid 2px #29323d;
+    border-radius: 4px;
+    background: #29323d;
+    cursor: pointer;
+}
