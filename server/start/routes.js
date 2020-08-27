@@ -17,7 +17,7 @@
 const Route = use('Route')
 
 Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
+  return { greeting: 'Login System\'s API is working!' }
 })
 
 Route.post('/users', 'UserController.create')
