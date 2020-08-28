@@ -11,6 +11,7 @@ class SignUp extends Component {
         cpf: '', 
         email: '',
         password: '',
+        profile_pic: null,
         passwordConfirm: '',
         buttonDisabled: false,
     }
@@ -21,21 +22,34 @@ class SignUp extends Component {
             cpf: '', 
             email: '',
             password: '',
+            profile_pic: null,
             passwordConfirm: '',
             buttonDisabled: false,
         })
     }
 
+    fileSelectedHandler = event => {
+        this.setState({
+            profile_pic: event.target.files[0],
+        });
+    }
+
     handleSignUp = async e => {
         e.preventDefault();
-        const { name, cpf, email, password } = this.state;
-
-        if (!name || !cpf || !email || !password) {
-            this.setState({ error: "Preencha todos os campos para entrar" });
-        } 
+        const { name, cpf, email, password, profile_pic } = this.state;
+        if (!name || !cpf || !email || !password || !profile_pic) {
+            this.setState({ error: "Preencha todos os campos e selecione uma imagem para cadastrar" });
+        }   
         else {
             try {
-                await api.post("/users", { name, cpf, email, password });
+                const FD = new FormData()
+                FD.append('profile_pic', this.state.profile_pic);
+                FD.append('name', this.state.name);
+                FD.append('cpf', this.state.cpf);
+                FD.append('email', this.state.email);
+                FD.append('password', this.state.password  );
+                console.log(FD)
+                await api.post("/users", FD);
                 this.props.history.push("/");
             } catch (err) {
                 console.warn(err);
@@ -50,6 +64,11 @@ class SignUp extends Component {
                 <form onSubmit={this.handleSignUp}>
                     Cadastrar
                     <div className="data">
+                        <input
+                            type='file'
+                            onChange={this.fileSelectedHandler}
+                        >
+                        </input>
                         <input
                             type='text'
                             placeholder='Digite seu nome completo'

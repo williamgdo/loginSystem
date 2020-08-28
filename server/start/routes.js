@@ -23,5 +23,5 @@ Route.get('/', () => {
 Route.post('/users', 'UserController.create')
 Route.post('/sessions', 'SessionController.create')
 
-Route.resource('users', 'UserController')
-  .middleware('auth')
+Route.resource('users', 'UserController').middleware('auth')
+Route.get('download/:fileName', 'UserController.download')
