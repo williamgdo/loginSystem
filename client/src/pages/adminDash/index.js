@@ -77,9 +77,7 @@ class AdminDash extends Component {
                         {this.renderTableData()}
                     </tbody>
                 </table>
-                <div className="buttonsAD">
-                    <button className="btnSair" onClick={this.handleLogout}>Sair</button>
-                </div>
+                <button className="btnSairAD" onClick={this.handleLogout}>Sair</button>
             </div>
         );
     }

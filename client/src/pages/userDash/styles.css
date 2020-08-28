@@ -21,8 +21,8 @@ h1 {
 }
 
 .dataUserDash {
-    display: flex;
-    align-items: flex-start;
+    display: table-column;
+    align-items: initial;
     padding: 20px 0;
 }
 

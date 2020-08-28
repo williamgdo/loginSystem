@@ -10,15 +10,17 @@ h1 {
 }
 
 .dataEA {
-    display: flex;
+    display: grid;
     align-items: flex-start;
     padding: 20px 0;
     margin-left: 100px; 
 }
 
 .imageEA {
+    max-width: 300px;
     text-align: center;
     padding: 20px 0;
+    margin-left: 100px; 
 }
 
 
