@@ -12,7 +12,7 @@ class UserSchema extends Schema {
       table.string('email', 254).notNullable().unique()
       table.integer('level').notNullable()
       table.string('password', 60).notNullable()
-      table.string('imgPath').notNullable()
+      table.string('imgName').notNullable()
       table.timestamps()
     })
   }

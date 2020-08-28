@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from "react-router-dom";
 import api from '../../services/api';
 import { login } from "../../services/auth";
+import decode from 'jwt-decode';
 
 import './styles.css'
 
@@ -33,7 +34,14 @@ class SignIn extends Component {
             try {
                 const response = await api.post("/sessions", { email, password });
                 login(response.data.token);
-                this.props.history.push("/userDash");
+
+                const { uid } = decode(response.data.token);
+                const response2 = await api.get(`/users/${uid}`);
+
+                if (response2.data.level === 999)
+                    this.props.history.push("/adminDash");
+                else
+                    this.props.history.push("/userDash");
             } catch (err) {
                 console.warn(err);
                 this.setState({ error: "Houve um problema com o login, verifique suas credenciais."});

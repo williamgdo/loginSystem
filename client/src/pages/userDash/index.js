@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './styles.css'
 import Header from '../../components/header';
 import decode from 'jwt-decode';
-import { getToken } from '../../services/auth';
+import { getToken, logout, getServer} from '../../services/auth';
 import api from '../../services/api';
-const SERVER = 'http://127.0.0.1:3333';
 
 class UserDash extends Component {
     state = {
@@ -14,6 +13,7 @@ class UserDash extends Component {
         id: '',
         name: '',
         updated_at: '',
+        imgName: '',
         imgPath: ''
     }
     
@@ -26,22 +26,34 @@ class UserDash extends Component {
         try {
             const response = await api.get(`/users/${uid}`);
             this.setState({ ...response.data });
-            console.log(this.state)
+            this.setState({ imgPath: `${getServer()}/download/${this.state.imgName}`})
         } catch (err) {
             console.log(err);
         }
     };
 
+    handleLogout = () => {
+        logout();
+        this.props.history.push("/");
+    }
+
+    handleEdit = () => {
+        this.props.history.push("/edit");
+    }
 
     render() {
         return (
             <div>
-                <Header />
+                <Header fullname={this.state.name} picSrc={`${getServer()}/download/${this.state.imgName}`}/>
                 <h1>Meu Perfil</h1>
                 <hr id="title"/>
                 <div className="grid">
                     <div className="image">
-                        <img src={`${SERVER}/download/${this.state.imgPath}`} alt={"Foto de perfil de " + this.state.name}></img>
+                        <img 
+                            src={`${this.state.imgPath}?${Date.now()}`} 
+                            alt={"Foto de perfil de " + this.state.name}
+                            className="bigProfile"
+                        />
                     </div>
                     <div className="data">
                         <p><strong>Nome: </strong>{this.state.name}</p>
@@ -51,8 +63,8 @@ class UserDash extends Component {
                 </div>
                 <hr/>
                 <div className="buttons">
-                    <button>Editar Informações</button>
-                    <button>Sair</button>
+                    <button onClick={this.handleEdit}>Editar Informações</button>
+                    <button onClick={this.handleLogout}>Sair</button>
                 </div>
             </div>
         );

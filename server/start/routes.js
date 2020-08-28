@@ -23,5 +23,6 @@ Route.get('/', () => {
 Route.post('/users', 'UserController.create')
 Route.post('/sessions', 'SessionController.create')
 
+Route.post('/updatePic/:id', 'UserController.updatePicture').middleware('auth')
 Route.resource('users', 'UserController').middleware('auth')
 Route.get('download/:fileName', 'UserController.download')

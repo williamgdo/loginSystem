@@ -6,4 +6,20 @@ header#main-header {
     justify-content: right;
     align-items: center;
     background-color: #edf0f4;
+    text-anchor: middle;
+}
+
+.avatar {
+    width: 55px;
+    height: 55px;
+}
+
+.username {
+    margin-top: 20px;
+}
+
+img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
 }
