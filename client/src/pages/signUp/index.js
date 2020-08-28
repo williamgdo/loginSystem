@@ -63,38 +63,47 @@ class SignUp extends Component {
             <div>
                 <form onSubmit={this.handleSignUp}>
                     Cadastrar
-                    <div className="data">
+                    <div className="dataSignUp">
                         <input
+                            className="inputSignUp"
                             type='file'
                             onChange={this.fileSelectedHandler}
                         >
                         </input>
                         <input
+                            className="inputSignUp"
                             type='text'
                             placeholder='Digite seu nome completo'
                             onChange={e => this.setState({ name: e.target.value})}
                         />
                         <input
+                            className="inputSignUp"
                             type='text'
                             placeholder='Digite seu CPF (apenas números, ex: 12345678909)'
                             onChange={e => this.setState({ cpf: e.target.value})}
                         />
                         <input
+                            className="inputSignUp"
                             type='email'
                             placeholder='Digite seu email'
                             onChange={e => this.setState({ email: e.target.value})}                        
                         />
                         <input
+                            className="inputSignUp"
                             type='password'
                             placeholder='Digite sua senha'
                             onChange={e => this.setState({ password: e.target.value})} 
                         />
                         <input
+                            className="inputSignUp"
                             type='password'
                             placeholder='Digite novamente a senha'
                             onChange={e => this.setState({ passwordConfirm: e.target.value})}      
                         />
-                        <button disabled={this.state.buttonDisabled} type="submit">
+                        <button 
+                            disabled={this.state.buttonDisabled} 
+                            className="btnSignUp"
+                            type="submit">
                             Cadastrar dados
                         </button>
                     </div>

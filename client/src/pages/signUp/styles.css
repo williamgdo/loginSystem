@@ -6,7 +6,7 @@ form {
     font-size: 28px;
 } 
 
-.data {
+.dataSignUp {
     color: #1B2D2A;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ form {
     box-sizing: border-box;
 }
 
-input {
+.inputSignUp {
     padding-top: 16px;
     box-sizing: border-box;
     outline: none;
@@ -30,7 +30,7 @@ input {
     margin-top: 20px;
 }
 
-button {
+.btnSignUp {
     padding-top: 16px;
     width: auto;
     /* min-width: 280px; */

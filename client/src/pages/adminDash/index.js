@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './styles.css'
 import Header from '../../components/header';
 import api from '../../services/api';
-import { getServer, getToken } from '../../services/auth';
+import { getServer, logout, getToken } from '../../services/auth';
 import decode from 'jwt-decode';
 
 class AdminDash extends Component {
@@ -27,6 +27,11 @@ class AdminDash extends Component {
         }
     };
 
+    handleLogout = () => {
+        logout();
+        this.props.history.push("/");
+    }
+
     levelToString = (level) => {
         if(level === 0)
             return 'Desativado';
@@ -42,7 +47,7 @@ class AdminDash extends Component {
 
     renderTableData() {
         return this.state.users.map((user) => {
-            const { id, name, cpf, email, level} = user //destructuring
+            const { id, name, cpf, email, level} = user 
             return (
                 <tr key={id} onClick={() => this.fetchUserDetails(id)}>
                     <td>{id}</td>
@@ -72,6 +77,9 @@ class AdminDash extends Component {
                         {this.renderTableData()}
                     </tbody>
                 </table>
+                <div className="buttons">
+                    <button onClick={this.handleLogout}>Sair</button>
+                </div>
             </div>
         );
     }

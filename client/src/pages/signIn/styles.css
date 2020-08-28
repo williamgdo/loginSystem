@@ -1,12 +1,44 @@
+body, html {   
+    width: 100%;
+    height: 100%;
+    display:table;
+}
+body {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+
+div.formSignIn
+{
+    display: flex;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+    display: table;
+    width: 100%;
+}
+
+
 form {
+    /* display: inline-block; */
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 50px;
+    /* text-align: left; */
     background-color: #edf0f4;
     width: 100%;
     max-width: 500px;
     padding: 20px;
     font-size: 28px;
+    display:table;/* shrinks to fit content */
+    margin:auto;
 } 
 
-.data {
+.dataSignIn {
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
     color: #1B2D2A;
     display: flex;
     flex-direction: column;
@@ -15,24 +47,22 @@ form {
     box-sizing: border-box;
 }
 
-input {
+.inputSignIn {
     padding-top: 16px;
     box-sizing: border-box;
     outline: none;
     border: solid 2px #c9d3dd;
+    margin-top: 20px;
     border-radius: 4px;
     color: #292929;
-    width: 100%;
-    padding: 12px;
+    width: 80%;
     font-size: 14px;
     background: #FFF;
-    /* background: #FFC482; */
-    margin-top: 20px;
 }
 
-button {
+.btnSignIn {
     padding-top: 16px;
-    width: auto;
+    width: 80%;
     /* min-width: 280px; */
     color: #FFF;
     padding: 12px;

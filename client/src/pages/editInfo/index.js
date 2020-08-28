@@ -37,6 +37,10 @@ class editInfo extends Component {
         });
     }
 
+    handleCancel = () => {
+        this.props.history.push("/userDash");
+    }
+
     handleSave = async e => {
         const { name, cpf, email, password } = this.state;
         if (!name || !cpf || !email || !password) {
@@ -122,7 +126,7 @@ class editInfo extends Component {
                     <hr/>
                     <div className="buttons">
                         <button onClick={this.handleSave}>Salvar Edição</button>
-                        <button>Cancelar</button>
+                        <button onClick={this.handleCancel}>Cancelar</button>
                     </div>
                 {this.state.error && <p>{this.state.error}</p>}
             </div>

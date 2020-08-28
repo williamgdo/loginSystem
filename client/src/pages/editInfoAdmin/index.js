@@ -44,9 +44,13 @@ class editInfoAdmin extends Component {
         });
     }
 
+    handleCancel = () => {
+        this.props.history.push("/adminDash");
+    }
+
     handleSave = async e => {
-        const { name, cpf, email, password } = this.state.user_info;
-        if (!name || !cpf || !email || !password) {
+        const { name, cpf, email, password, level } = this.state.user_info;
+        if (!name || !cpf || !email || !password || !level) {
             this.setState({ error: "Preencha todos os campos e selecione uma imagem para cadastrar" });
         }   
         else {
@@ -60,7 +64,8 @@ class editInfoAdmin extends Component {
                     FD.append('name', this.state.user_info.name);
                     FD.append('cpf', this.state.user_info.cpf);
                     FD.append('email', this.state.user_info.email);
-                    FD.append('password', this.state.user_info.password  );
+                    FD.append('password', this.state.user_info.password);
+                    FD.append('level', this.state.user_info.level);
                     await api.put(`/users/${this.state.user_info.id}`, FD);
 
                     this.props.history.push("/adminDash");
@@ -74,7 +79,8 @@ class editInfoAdmin extends Component {
                     FD.append('name', this.state.user_info.name);
                     FD.append('cpf', this.state.user_info.cpf);
                     FD.append('email', this.state.user_info.email);
-                    FD.append('password', this.state.user_info.password  );
+                    FD.append('password', this.state.user_info.password);
+                    FD.append('level', this.state.user_info.level);
                     await api.put(`/users/${this.state.user_info.id}`, FD);
                     this.props.history.push("/adminDash");
                 } catch (err) {
@@ -116,7 +122,8 @@ class editInfoAdmin extends Component {
                             placeholder='Digite sua senha'
                             onChange={e => this.setState({ password: e.target.value})}  
                         />
-                        <select id="level">
+                        <select id="level" onChange={e => this.setState({ user_info : {...this.state.user_info, level: e.target.value}})} >
+                            <option value="" selected disabled hidden>Selecione um Cargo</option>
                             <option value="999">Administrador</option>
                             <option value="1">Usuário comum</option>
                             <option value="0">Desativado</option>
@@ -134,7 +141,7 @@ class editInfoAdmin extends Component {
                 <hr/>
                 <div className="buttons">
                     <button onClick={this.handleSave}>Salvar Alterações</button>
-                    <button >Cancelar</button>
+                    <button onClick={this.handleCancel}>Cancelar</button>
                 </div>
                 {this.state.error && <p>{this.state.error}</p>}
             </div>

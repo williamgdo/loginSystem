@@ -32,40 +32,48 @@ class SignIn extends Component {
         } 
         else {
             try {
-                const response = await api.post("/sessions", { email, password });
+                let response = await api.post("/sessions", { email, password });
                 login(response.data.token);
 
                 const { uid } = decode(response.data.token);
-                const response2 = await api.get(`/users/${uid}`);
+                response = await api.get(`/users/${uid}`);
 
-                if (response2.data.level === 999)
+                if (response.data.level === 999)
                     this.props.history.push("/adminDash");
-                else
+                else if (response.data.level === 1)
                     this.props.history.push("/userDash");
+                else {
+                    this.setState({ error: "Você foi desativado da empresa."});
+                }
             } catch (err) {
                 console.warn(err);
                 this.setState({ error: "Houve um problema com o login, verifique suas credenciais."});
             }
         }
     };
-
+    
     render() {
         return (
-            <div>
+            <div className='formSignIn'>
                 <form onSubmit={this.handleSignIn}>
-                    Cadastrar
-                    <div className="data">
+                    Login
+                    <div className="dataSignIn">
                         <input
+                            className="inputSignIn"
                             type='email'
                             placeholder='Digite seu email'
                             onChange={e => this.setState({ email: e.target.value})}                        
                         />
                         <input
+                            className="inputSignIn"
                             type='password'
                             placeholder='Digite sua senha'
                             onChange={e => this.setState({ password: e.target.value})} 
                         />
-                        <button disabled={this.state.buttonDisabled} type="submit">
+                        <button 
+                            className="btnSignIn"
+                            disabled={this.state.buttonDisabled} 
+                            type="submit">
                             Entrar
                         </button>
                     </div>
