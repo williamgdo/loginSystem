@@ -97,8 +97,8 @@ class editInfoAdmin extends Component {
                 <Header fullname={this.state.name} picSrc={`${getServer()}/download/${this.state.imgName}`}/>
                 <h1>Editar Usuário</h1>
                 <hr id="title"/>
-                <div className="grid">
-                    <div className="data">
+                <div className="gridEA">
+                    <div className="dataEA">
                         <input
                             type='text'
                             placeholder='Digite seu nome completo'
@@ -122,24 +122,24 @@ class editInfoAdmin extends Component {
                             placeholder='Digite sua senha'
                             onChange={e => this.setState({ password: e.target.value})}  
                         />
-                        <select id="level" onChange={e => this.setState({ user_info : {...this.state.user_info, level: e.target.value}})} >
+                        <select className="selectEA" id="level" onChange={e => this.setState({ user_info : {...this.state.user_info, level: e.target.value}})} >
                             <option value="" selected disabled hidden>Selecione um Cargo</option>
                             <option value="999">Administrador</option>
                             <option value="1">Usuário comum</option>
                             <option value="0">Desativado</option>
                         </select>
                     </div>
-                    <div className="image">
+                    <div className="imageEA">
                             <img src={`${this.state.user_info.imgPath}?${Date.now()}`} alt={"Foto de perfil de " + this.state.user_info.name}></img>
                             <input
-                                className='imgInput'
+                                className='imgInputEA'
                                 type='file'
                                 onChange={this.fileSelectedHandler}
                             />
                     </div>
                 </div>
                 <hr/>
-                <div className="buttons">
+                <div className="buttonsEA">
                     <button onClick={this.handleSave}>Salvar Alterações</button>
                     <button onClick={this.handleCancel}>Cancelar</button>
                 </div>

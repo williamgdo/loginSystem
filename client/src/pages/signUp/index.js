@@ -60,7 +60,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div>
+            <div className='formSignUp'>
                 <form onSubmit={this.handleSignUp}>
                     Cadastrar
                     <div className="dataSignUp">
@@ -93,12 +93,6 @@ class SignUp extends Component {
                             type='password'
                             placeholder='Digite sua senha'
                             onChange={e => this.setState({ password: e.target.value})} 
-                        />
-                        <input
-                            className="inputSignUp"
-                            type='password'
-                            placeholder='Digite novamente a senha'
-                            onChange={e => this.setState({ passwordConfirm: e.target.value})}      
                         />
                         <button 
                             disabled={this.state.buttonDisabled} 

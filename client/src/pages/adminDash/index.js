@@ -62,10 +62,10 @@ class AdminDash extends Component {
 
     render() {
         return (
-            <div>
+            <div className="divAD">
                 <Header fullname={this.state.name} picSrc={`${getServer()}/download/${this.state.imgName}`}/>
                 <h1>Usuários da Empresa</h1>
-                <table>
+                <table className="tableAD">
                     <tbody>
                         <tr>
                             <th>ID</th>
@@ -77,8 +77,8 @@ class AdminDash extends Component {
                         {this.renderTableData()}
                     </tbody>
                 </table>
-                <div className="buttons">
-                    <button onClick={this.handleLogout}>Sair</button>
+                <div className="buttonsAD">
+                    <button className="btnSair" onClick={this.handleLogout}>Sair</button>
                 </div>
             </div>
         );

@@ -77,7 +77,7 @@ class SignIn extends Component {
                             Entrar
                         </button>
                     </div>
-                    <Link to="/signup">Criar conta grátis</Link>
+                    <Link className="linkSignIn" to="/signup">Criar conta grátis</Link>
                 </form>
                 {this.state.error && <p>{this.state.error}</p>}
             </div>

@@ -2,29 +2,31 @@ h1 {
     margin: 30px 0px 5px 70px;    
 }
 
-.grid {
+.gridUserDash {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 10px;
     padding: 10px;
 }
 
-.image {
-    margin-left: 70px;
+.imageUserDash {
+    margin-left: 20%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.bigProfile {
+.bigProfileUserDash {
     width: 300px;
     height: 300px;
 }
 
-.data {
+.dataUserDash {
     display: flex;
     align-items: flex-start;
     padding: 20px 0;
 }
 
-.data > p {
+.dataUserDash > p {
     font-size: 30px;
     margin: 25px; 
 }
@@ -43,11 +45,11 @@ hr#title {
     width: 60%;
 }
 
-.buttons {
+.buttonsUserDash {
     margin-left: 70px;
 }
 
-button {
+.btnUD {
     margin: 20px;
     padding-top: 16px;
     width: 280px;

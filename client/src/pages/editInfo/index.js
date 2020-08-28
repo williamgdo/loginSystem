@@ -88,8 +88,8 @@ class editInfo extends Component {
                 <Header fullname={this.state.name} picSrc={`${getServer()}/download/${this.state.imgName}`}/>
                 <h1>Editar Perfil</h1>
                 <hr id="title"/>
-                    <div className="grid">
-                        <div className="data">
+                    <div className="gridEditUser">
+                        <div className="dataEditUser">
                             <input
                                 type='text'
                                 placeholder='Digite seu nome completo'
@@ -114,17 +114,17 @@ class editInfo extends Component {
                                 onChange={e => this.setState({ password: e.target.value})}  
                             />
                         </div>
-                        <div className="image">
+                        <div className="imageEditUser">
                             <img src={`${this.state.imgPath}?${Date.now()}`} alt={"Foto de perfil de " + this.state.name}></img>
                             <input
-                                className='imgInput'
+                                className='imgInputEditUser'
                                 type='file'
                                 onChange={this.fileSelectedHandler}
                             />
                         </div>
                     </div>
                     <hr/>
-                    <div className="buttons">
+                    <div className="buttonsEditUser">
                         <button onClick={this.handleSave}>Salvar Edição</button>
                         <button onClick={this.handleCancel}>Cancelar</button>
                     </div>

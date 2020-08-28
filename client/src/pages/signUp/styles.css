@@ -1,12 +1,28 @@
-form {
+
+div.formSignUp
+{
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+    display: table;
+    width: 100%;
+}
+
+.formSignUp {
     background-color: #edf0f4;
     width: 100%;
     max-width: 500px;
     padding: 20px;
     font-size: 28px;
+    display: table;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 33%;
+    margin-right: 33%;
 } 
 
 .dataSignUp {
+    width: 100%;
     color: #1B2D2A;
     display: flex;
     flex-direction: column;
@@ -20,20 +36,17 @@ form {
     box-sizing: border-box;
     outline: none;
     border: solid 2px #c9d3dd;
+    margin-top: 20px;
     border-radius: 4px;
     color: #292929;
-    width: 100%;
-    padding: 12px;
+    width: 80%;
     font-size: 14px;
     background: #FFF;
-    /* background: #FFC482; */
-    margin-top: 20px;
 }
 
 .btnSignUp {
     padding-top: 16px;
-    width: auto;
-    /* min-width: 280px; */
+    width: 80%;
     color: #FFF;
     padding: 12px;
     font-size: 14px;

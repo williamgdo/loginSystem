@@ -2,23 +2,25 @@ h1 {
     margin: 30px 0px 5px 70px;    
 }
 
-form {
-    background-color: #edf0f4;
-    width: 100%;
-    max-width: 930px;
-    padding: 20px;
-    font-size: 28px;
-}
-
-.grid {
+.gridEditUser {
     display: grid;
-    grid-template-columns: 340.3px 589.7px;
+    grid-template-columns: auto auto;
     grid-gap: 10px;
     padding: 10px;
 }
 
-.image {
+.dataEditUser {
+    max-width: 50%;
+    display: table;
+    align-items: flex-start;
+    padding: 20px 0;
+    margin-left: 100px; 
+}
+
+.imageEditUser {
     margin-left: 70px;
+    display: table;
+    align-items: flex-start;
 }
 
 img {
@@ -26,16 +28,10 @@ img {
     height: 200px;
 }
 
-.imgInput {
+.imgInputEditUser {
     max-width: 400px;
 }
 
-.data {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px 0;
-    margin-left: 100px; 
-}
 
 input {
     padding-top: 16px;
@@ -48,7 +44,6 @@ input {
     padding: 12px;
     font-size: 14px;
     background: #FFF;
-    /* background: #FFC482; */
     margin-top: 20px;
 }
 
@@ -66,7 +61,7 @@ hr#title {
     width: 60%;
 }
 
-.buttons {
+.buttonsEditUser {
     margin-left: 70px;
 }
 

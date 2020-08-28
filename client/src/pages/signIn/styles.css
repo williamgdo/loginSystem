@@ -1,17 +1,4 @@
-body, html {   
-    width: 100%;
-    height: 100%;
-    display:table;
-}
-body {
-    display:table-cell;
-    vertical-align:middle;
-}
-
-
-div.formSignIn
-{
-    display: flex;
+div.formSignIn {
     text-align: start;
     justify-content: center;
     align-items: center;
@@ -19,25 +6,21 @@ div.formSignIn
     width: 100%;
 }
 
-
-form {
-    /* display: inline-block; */
-    margin-left: auto;
-    margin-right: auto;
-    border-left: 50px;
-    /* text-align: left; */
-    background-color: #edf0f4;
+.formSignIn {
+    box-sizing: border-box;
     width: 100%;
+    background-color: #edf0f4;
     max-width: 500px;
     padding: 20px;
     font-size: 28px;
-    display:table;/* shrinks to fit content */
-    margin:auto;
+    display: table;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    margin-left: 33%;
+    margin-right: 33%;
 } 
 
 .dataSignIn {
-    margin-left: 50px;
-    margin-right: 50px;
     width: 100%;
     color: #1B2D2A;
     display: flex;
@@ -63,7 +46,6 @@ form {
 .btnSignIn {
     padding-top: 16px;
     width: 80%;
-    /* min-width: 280px; */
     color: #FFF;
     padding: 12px;
     font-size: 14px;
@@ -73,4 +55,13 @@ form {
     background: #29323d;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.linkSignIn {
+    text-decoration: inherit;
+    font-size: 20px;
+    color: #FFF;
+    border-radius: 4px;
+    border: solid 2px #34627c;
+    background: #34627c;
 }

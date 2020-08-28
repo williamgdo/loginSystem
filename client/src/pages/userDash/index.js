@@ -47,24 +47,24 @@ class UserDash extends Component {
                 <Header fullname={this.state.name} picSrc={`${getServer()}/download/${this.state.imgName}`}/>
                 <h1>Meu Perfil</h1>
                 <hr id="title"/>
-                <div className="grid">
-                    <div className="image">
+                <div className="gridUserDash">
+                    <div className="imageUserDash">
                         <img 
                             src={`${this.state.imgPath}?${Date.now()}`} 
                             alt={"Foto de perfil de " + this.state.name}
-                            className="bigProfile"
+                            className="bigProfileUserDash"
                         />
                     </div>
-                    <div className="data">
+                    <div className="dataUserDash">
                         <p><strong>Nome: </strong>{this.state.name}</p>
                         <p><strong>CPF: </strong>{this.state.cpf}</p>
                         <p><strong>E-mail: </strong>{this.state.email}</p>
                     </div>
                 </div>
                 <hr/>
-                <div className="buttons">
-                    <button onClick={this.handleEdit}>Editar Informações</button>
-                    <button onClick={this.handleLogout}>Sair</button>
+                <div className="buttonsUserDash">
+                    <button className="btnUD" onClick={this.handleEdit}>Editar Informações</button>
+                    <button className="btnUD" onClick={this.handleLogout}>Sair</button>
                 </div>
             </div>
         );

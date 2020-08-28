@@ -9,10 +9,10 @@ class Header extends Component {
 
     render() {
         return (
-            <header id="main-header">
-                <div className="grid">
-                    <p className="username">{this.props.fullname}</p>
-                    <img className="avatar" id="avatar" src={this.props.picSrc} alt="Avatar"/>
+            <header id="mainHeader">
+                <div className="gridHeader">
+                    <p className="usernameHeader">{this.props.fullname}</p>
+                    <img className="avatarHeader" id="avatar" src={this.props.picSrc} alt="Avatar"/>
                 </div>
             </header>
         )
